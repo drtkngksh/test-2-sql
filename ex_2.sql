@@ -60,7 +60,8 @@ SELECT latest_transactions.customer_id, latest_transaction.transaction_id, lates
     ORDER BY latest_transactions.customer_id
   )
   
-  
+-- тут у меня сложности все в один запрос засунуть, чтобы не было искажений в цифрах
+
 /* -- выбрать айди, дату первой операции, где стоимость больше или равна 1000 и бренд
 SELECT
   transactions.customer_id,
@@ -88,6 +89,7 @@ WHERE (
 )
 ORDER BY transactions.customer_id */
 
+-- вывести по пользователям, которые делали покупки в каждый месяц в рамках года, средний чек
 SELECT 
   transactions.customer_id,
   ROUND(AVG(CAST(REPLACE(
